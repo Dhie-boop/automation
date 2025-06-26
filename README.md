@@ -71,20 +71,23 @@ Create a `config.json` file in the project root with your test credentials:
 automation/
 │
 ├── automate/                 # Virtual environment
+├── screenshots/              # Generated screenshots folder
+│   ├── 0_home.png           # Screenshot: Homepage
+│   ├── 1_logged_in.png      # Screenshot: After login
+│   ├── 2_items_added.png    # Screenshot: Items in cart
+│   ├── 3_cart_view.png      # Screenshot: Cart page
+│   ├── 4_checkout_info.png  # Screenshot: Checkout form
+│   ├── 5_checkout_summary.png # Screenshot: Order summary
+│   ├── 6_order_complete.png # Screenshot: Order confirmation
+│   ├── error_timeout.png    # Screenshot: Timeout errors (if any)
+│   └── error_unexpected.png # Screenshot: Unexpected errors (if any)
 ├── test.py                   # Main automation script
-├── config.json              # Configuration file (create this)
+├── config.json              # Configuration file
 ├── requirements.txt          # Python dependencies
 ├── README.md                # This file
 ├── cart.png                 # Sample screenshot
 │
 └── Generated files (after running):
-    ├── 0_home.png           # Screenshot: Homepage
-    ├── 1_logged_in.png      # Screenshot: After login
-    ├── 2_items_added.png    # Screenshot: Items in cart
-    ├── 3_cart_view.png      # Screenshot: Cart page
-    ├── 4_checkout_info.png  # Screenshot: Checkout form
-    ├── 5_checkout_summary.png # Screenshot: Order summary
-    ├── 6_order_complete.png # Screenshot: Order confirmation
     └── order_summary.json   # Order details and total price
 ```
 

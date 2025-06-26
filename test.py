@@ -79,33 +79,33 @@ def run():
 
         try:
             page.goto(config["base_url"])
-            page.screenshot(path="0_home.png")
+            page.screenshot(path="screenshots/0_home.png")
 
             login = LoginPage(page)
             login.login(config["username"], config["password"])
-            page.screenshot(path="1_logged_in.png")
+            page.screenshot(path="screenshots/1_logged_in.png")
 
             inventory = InventoryPage(page)
             inventory.add_items_to_cart()
-            page.screenshot(path="2_items_added.png")
+            page.screenshot(path="screenshots/2_items_added.png")
             inventory.go_to_cart()
 
             cart = CartPage(page)
-            page.screenshot(path="3_cart_view.png")
+            page.screenshot(path="screenshots/3_cart_view.png")
             cart.proceed_to_checkout()
 
             checkout = CheckoutPage(page)
             checkout.fill_checkout_info("Dhieu", "David", "00255")
-            page.screenshot(path="4_checkout_info.png")
+            page.screenshot(path="screenshots/4_checkout_info.png")
 
             total = checkout.get_total_price()
             logging.info("Total price extracted: %s", total)
-            page.screenshot(path="5_checkout_summary.png")
+            page.screenshot(path="screenshots/5_checkout_summary.png")
 
             checkout.finish_order()
             confirmation = checkout.get_confirmation()
             logging.info("Order confirmation: %s", confirmation)
-            page.screenshot(path="6_order_complete.png")
+            page.screenshot(path="screenshots/6_order_complete.png")
 
             # Save result
             with open("order_summary.json", "w") as f:
@@ -113,10 +113,10 @@ def run():
 
         except PlaywrightTimeoutError as e:
             logging.error("Timeout occurred: %s", e)
-            page.screenshot(path="error_timeout.png")
+            page.screenshot(path="screenshots/error_timeout.png")
         except Exception as e:
             logging.error("Unexpected error: %s", e)
-            page.screenshot(path="error_unexpected.png")
+            page.screenshot(path="screenshots/error_unexpected.png")
         finally:
             browser.close()
 
