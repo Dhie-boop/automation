@@ -24,7 +24,7 @@ def run():
         page.screenshot(path="cart.png")
 
         # Optional: Pause to observe (if not headless)
-        page.wait_for_timeout(6000)
+        page.wait_for_timeout(10000)
 
         browser.close()
 
