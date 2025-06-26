@@ -1,4 +1,3 @@
-# sauce_demo_test.py
 from playwright.sync_api import sync_playwright
 
 def run():
