@@ -146,8 +146,10 @@ You can modify the `config.json` file to use different credentials or URLs:
 
 After successful execution, you'll find:
 
-- **Screenshots**: Step-by-step visual documentation (0_home.png through 6_order_complete.png)
-- **order_summary.json**: Contains order total and completion status
+- **Screenshots**: Step-by-step visual documentation in the `screenshots/` folder:
+  - `0_home.png` through `6_order_complete.png` for successful runs
+  - `error_timeout.png` and `error_unexpected.png` for any errors
+- **order_summary.json**: Contains order total and completion status (in root directory)
 - **Console logs**: Detailed execution information
 
 ## Troubleshooting
